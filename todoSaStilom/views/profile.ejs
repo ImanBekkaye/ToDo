@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeStyle </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="semanticUI/semantic.css">
+
+
+</head>
+<body style="background: #F1E2D3; padding: 50px; ">
+<div class="ui raised segment clearing ">
+    <div class="ui two column  grid">
+        <div class="row">
+
+            <div class="column"> <h1> Dobrodošli <%= data.username %>!</h1></div>
+            <div class="column">
+                <form action="/" style="float: right;"
+                      class="ui button "><input type='submit' value='Odjavi se'></form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui raised segment clearing ">
+    <div class="ui two column divided grid">
+
+        <div class="row">
+            <div class="column  ">
+
+
+                <h4>Lista taskova </h4>
+
+
+
+            </div>
+            <div class="column">
+
+
+                <h4>Dodavanje taskova</h4>
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="column  ">
+                <table class="ui celled table">
+                    <tbody>
+
+
+                    <%
+                    data.todoList.map(el=>{%>
+
+                    <tr><td><%=el%></td></tr>
+
+                    <% })%>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column  ">
+                <div class="ui  segment ">
+                    <form class="ui form" action="/profile", method="post">
+                        <div class="field">
+                            <input  type="text" value="" name="task" placeholder="Unesite task">
+                        </div>
+
+                        <input type="submit" value="Dodaj task" class="ui button">
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
